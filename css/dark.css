@@ -1,0 +1,257 @@
+/* ============================================================
+   Orlando & Miami Trip Planner 2026 - Dark Mode
+   ============================================================ */
+
+[data-theme="dark"] {
+  /* Colors */
+  --color-bg: #0F1117;
+  --color-bg-alt: #1A1D27;
+  --color-text: #E8ECF1;
+  --color-text-secondary: #9AA3B5;
+  --color-text-light: #6B7488;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-card-bg: #1A1D27;
+
+  /* Glassmorphism - Dark */
+  --glass-bg: rgba(26, 29, 39, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 16px 60px rgba(0, 0, 0, 0.5);
+
+  /* Gradient Hero */
+  --gradient-hero: linear-gradient(135deg, rgba(0, 40, 105, 0.97), rgba(0, 70, 180, 0.92));
+}
+
+[data-theme="dark"] body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Sidebar */
+[data-theme="dark"] .sidebar {
+  background: var(--color-card-bg);
+  border-right-color: var(--color-border);
+}
+
+[data-theme="dark"] .sidebar-header {
+  border-bottom-color: var(--color-border);
+}
+
+[data-theme="dark"] .nav-item {
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .nav-item:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .nav-item.active {
+  background: rgba(var(--color-primary-rgb), 0.15);
+  color: var(--color-primary-light);
+}
+
+[data-theme="dark"] .sidebar-footer {
+  border-top-color: var(--color-border);
+}
+
+/* Navbar */
+[data-theme="dark"] .navbar-top {
+  background: rgba(15, 17, 23, 0.8);
+  border-bottom-color: var(--color-border);
+}
+
+[data-theme="dark"] .navbar-top .btn-icon:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Cards */
+[data-theme="dark"] .card,
+[data-theme="dark"] .dashboard-card,
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .park-card,
+[data-theme="dark"] .participant-card,
+[data-theme="dark"] .doc-card,
+[data-theme="dark"] .widget-card {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .card-glass {
+  background: rgba(26, 29, 39, 0.6);
+}
+
+[data-theme="dark"] .glass-card {
+  background: rgba(26, 29, 39, 0.6);
+}
+
+[data-theme="dark"] .glass-card:hover {
+  background: rgba(26, 29, 39, 0.8);
+}
+
+/* Stats */
+[data-theme="dark"] .stat-card {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+/* Budget */
+[data-theme="dark"] .budget-category {
+  background: var(--color-bg);
+}
+
+/* Tables */
+[data-theme="dark"] .table-custom thead th {
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+  border-bottom-color: var(--color-border);
+}
+
+[data-theme="dark"] .table-custom tbody td {
+  border-bottom-color: var(--color-border);
+}
+
+[data-theme="dark"] .table-custom tbody tr:hover {
+  background: var(--color-bg);
+}
+
+/* Forms */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+  background: var(--color-bg);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+  border-color: var(--color-primary-light);
+}
+
+/* Modal */
+[data-theme="dark"] .modal-content {
+  background: var(--color-card-bg);
+}
+
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-footer {
+  border-color: var(--color-border);
+}
+
+/* Footer */
+[data-theme="dark"] .app-footer {
+  background: var(--color-card-bg);
+  border-top-color: var(--color-border);
+}
+
+/* Accordion */
+[data-theme="dark"] .accordion-item {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .accordion-button {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .accordion-button:not(.collapsed) {
+  background: rgba(var(--color-primary-rgb), 0.1);
+}
+
+/* Timeline */
+[data-theme="dark"] .timeline::before {
+  background: var(--color-border);
+}
+
+[data-theme="dark"] .timeline-item::before {
+  border-color: var(--color-bg);
+}
+
+/* Avatar Group */
+[data-theme="dark"] .avatar-group .avatar-item {
+  border-color: var(--color-card-bg);
+}
+
+/* Toast */
+[data-theme="dark"] .toast-custom {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+/* Checklist */
+[data-theme="dark"] .checklist-item {
+  border-bottom-color: var(--color-border);
+}
+
+/* Offcanvas */
+[data-theme="dark"] .offcanvas {
+  background: var(--color-card-bg);
+}
+
+/* Map Container */
+[data-theme="dark"] .map-container {
+  border-color: var(--color-border);
+}
+
+/* Placeholder */
+[data-theme="dark"] .img-placeholder {
+  background: var(--color-bg-alt);
+}
+
+/* Nav tabs */
+[data-theme="dark"] .nav-tabs {
+  border-bottom-color: var(--color-border);
+}
+
+/* Dropdown */
+[data-theme="dark"] .dropdown-menu {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .dropdown-item {
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Alert */
+[data-theme="dark"] .alert {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+/* Progress */
+[data-theme="dark"] .progress {
+  background: var(--color-bg-alt);
+}
+
+/* Close button */
+[data-theme="dark"] .btn-close {
+  filter: invert(1);
+}
+
+/* Selection color */
+[data-theme="dark"] ::selection {
+  background: rgba(var(--color-primary-rgb), 0.3);
+}
+
+/* Skeleton */
+[data-theme="dark"] .skeleton {
+  background: linear-gradient(90deg, var(--color-bg) 25%, var(--color-bg-alt) 50%, var(--color-bg) 75%);
+}
+
+/* Rating empty */
+[data-theme="dark"] .rating .rating-empty {
+  color: rgba(255, 255, 255, 0.1);
+}

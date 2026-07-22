@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa - Orlando & Miami 2026</title>
+  <meta name="description" content="Mapa interativo com pontos turísticos de Orlando e Miami">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dark.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="toast-container"></div>
+  <button class="back-to-top" data-back-to-top><i class="fas fa-arrow-up"></i></button>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="logo-icon"><i class="fas fa-map-marked-alt"></i></div><div class="logo-text">Orlando & Miami<span>2026 Trip Planner</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="nav-section"><div class="nav-label">Principal</div>
+          <a href="index.html" class="nav-item"><i class="fas fa-home"></i> Home</a>
+          <a href="cronograma.html" class="nav-item"><i class="fas fa-calendar-alt"></i> Cronograma</a>
+          <a href="parques.html" class="nav-item"><i class="fas fa-roller-coaster"></i> Parques</a>
+          <a href="restaurantes.html" class="nav-item"><i class="fas fa-utensils"></i> Restaurantes</a>
+          <a href="hotel.html" class="nav-item"><i class="fas fa-hotel"></i> Hotel</a>
+        </div>
+        <div class="nav-section"><div class="nav-label">Planejamento</div>
+          <a href="orcamento.html" class="nav-item"><i class="fas fa-wallet"></i> Orçamento</a>
+          <a href="compras.html" class="nav-item"><i class="fas fa-shopping-bag"></i> Compras</a>
+          <a href="transporte.html" class="nav-item"><i class="fas fa-car"></i> Transporte</a>
+          <a href="grupo.html" class="nav-item"><i class="fas fa-users"></i> Grupo</a>
+        </div>
+        <div class="nav-section"><div class="nav-label">Úteis</div>
+          <a href="documentos.html" class="nav-item"><i class="fas fa-file-alt"></i> Documentos</a>
+          <a href="checklist.html" class="nav-item"><i class="fas fa-check-double"></i> Checklist</a>
+          <a href="mapa.html" class="nav-item active"><i class="fas fa-map"></i> Mapa</a>
+          <a href="configuracoes.html" class="nav-item"><i class="fas fa-cog"></i> Configurações</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="user-info"><div class="user-avatar">M</div><div><div style="font-weight:600;font-size:0.85rem;">Michel Aguiar</div><div style="font-size:0.75rem;color:var(--color-text-secondary);">Organizador</div></div></div></div>
+    </aside>
+    <main class="main-content">
+      <header class="navbar-top">
+        <button class="sidebar-toggle" data-sidebar-toggle><i class="fas fa-bars"></i></button>
+        <span class="page-title">Mapa</span>
+        <div class="navbar-actions">
+          <button class="btn-icon" data-theme-toggle><i class="fas fa-moon"></i></button>
+          <a href="configuracoes.html" class="btn-icon"><i class="fas fa-cog"></i></a>
+        </div>
+      </header>
+      <div class="page-content">
+        <h1 class="section-title mb-0">Mapa Interativo</h1>
+        <p class="section-subtitle">Pontos turísticos de Orlando e Miami</p>
+
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="card" data-aos="fade-up">
+              <div class="card-header d-flex align-items-center justify-content-between">
+                <span><i class="fas fa-map-marked-alt me-2 text-primary"></i>Google Maps</span>
+                <div>
+                  <select class="form-select form-select-sm" style="width:auto;display:inline-block;" onchange="changeMap(this.value)">
+                    <option value="orlando">Orlando</option>
+                    <option value="miami">Miami</option>
+                  </select>
+                </div>
+              </div>
+              <div class="card-body p-0">
+                <div class="map-container" style="border-radius:0;">
+                  <iframe id="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112226.20432180105!2d-81.42089085!3d28.4775082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7738d9180c5ef%3A0x8a16f702310c3dab!2sOrlando%2C%20FL%2C%20EUA!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Orlando"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-header"><i class="fas fa-list me-2 text-primary"></i>Pontos de Interesse</div>
+              <div class="card-body">
+                <div class="location-list" id="locationsList">
+                  <div class="text-center text-muted py-3"><i class="fas fa-spinner fa-spin me-2"></i>Carregando...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="app-footer">
+        <div class="footer-content">
+          <div class="footer-copyright"><i class="far fa-copyright me-1"></i> 2026 Orlando & Miami Trip Planner</div>
+          <div class="footer-links"><a href="configuracoes.html">Configurações</a><a href="mapa.html">Mapa</a><a href="grupo.html">Grupo</a></div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    AOS.init({ duration: 600, once: true, easing: 'ease-out-cubic' });
+
+    const locations = {
+      orlando: [
+        { name: 'Magic Kingdom', icon: 'fa-star', desc: 'Parque Disney', url: 'https://maps.google.com/?q=Magic+Kingdom+Orlando' },
+        { name: 'EPCOT', icon: 'fa-globe', desc: 'Parque Disney', url: 'https://maps.google.com/?q=EPCOT+Orlando' },
+        { name: 'Hollywood Studios', icon: 'fa-film', desc: 'Parque Disney', url: 'https://maps.google.com/?q=Hollywood+Studios+Orlando' },
+        { name: 'Animal Kingdom', icon: 'fa-paw', desc: 'Parque Disney', url: 'https://maps.google.com/?q=Animal+Kingdom+Orlando' },
+        { name: 'Universal Studios', icon: 'fa-video', desc: 'Parque Universal', url: 'https://maps.google.com/?q=Universal+Studios+Orlando' },
+        { name: 'Islands of Adventure', icon: 'fa-mountain', desc: 'Parque Universal', url: 'https://maps.google.com/?q=Islands+of+Adventure+Orlando' },
+        { name: 'SeaWorld', icon: 'fa-fish', desc: 'Parque Temático', url: 'https://maps.google.com/?q=SeaWorld+Orlando' },
+        { name: 'Premium Outlet International Dr', icon: 'fa-shopping-bag', desc: 'Outlet', url: 'https://maps.google.com/?q=Premium+Outlet+International+Drive+Orlando' },
+        { name: 'Walmart Supercenter', icon: 'fa-store', desc: 'Supermercado', url: 'https://maps.google.com/?q=Walmart+Orlando+FL' },
+        { name: 'Aeroporto MCO', icon: 'fa-plane', desc: 'Aeroporto', url: 'https://maps.google.com/?q=Orlando+International+Airport' }
+      ],
+      miami: [
+        { name: 'Miami Beach', icon: 'fa-umbrella-beach', desc: 'Praia', url: 'https://maps.google.com/?q=Miami+Beach+FL' },
+        { name: 'South Beach', icon: 'fa-sun', desc: 'Praia', url: 'https://maps.google.com/?q=South+Beach+Miami' },
+        { name: 'Bayside Marketplace', icon: 'fa-shopping-bag', desc: 'Shopping', url: 'https://maps.google.com/?q=Bayside+Marketplace+Miami' },
+        { name: 'Little Havana', icon: 'fa-music', desc: 'Bairro cultural', url: 'https://maps.google.com/?q=Little+Havana+Miami' },
+        { name: 'Aeroporto MIA', icon: 'fa-plane', desc: 'Aeroporto', url: 'https://maps.google.com/?q=Miami+International+Airport' }
+      ]
+    };
+
+    function changeMap(city) {
+      const urls = {
+        orlando: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112226.20432180105!2d-81.42089085!3d28.4775082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7738d9180c5ef%3A0x8a16f702310c3dab!2sOrlando%2C%20FL%2C%20EUA!5e0!3m2!1spt-BR!2sbr!4v1',
+        miami: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14374.73577821693!2d-80.14119465!3d25.7826035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b8a1c2b0e6f1%3A0x8a16f702310c3dab!2sMiami%2C%20FL%2C%20EUA!5e0!3m2!1spt-BR!2sbr!4v1'
+      };
+      document.getElementById('googleMap').src = urls[city] || urls.orlando;
+      loadLocations(city);
+    }
+
+    function loadLocations(city = 'orlando') {
+      const list = locations[city] || locations.orlando;
+      const container = document.getElementById('locationsList');
+      container.innerHTML = list.map(loc => `
+        <div class="widget-card mb-2">
+          <div class="widget-icon" style="background:rgba(0,87,217,0.1);color:#0057D9;"><i class="fas ${loc.icon}"></i></div>
+          <div class="widget-info">
+            <div class="widget-title">${loc.name}</div>
+            <div style="font-size:0.75rem;color:var(--color-text-secondary);">${loc.desc}</div>
+          </div>
+          <a href="${loc.url}" target="_blank" class="btn btn-sm btn-outline-primary" title="Abrir no Maps"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+      `).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => loadLocations('orlando'));
+  </script>
+</body>
+</html>

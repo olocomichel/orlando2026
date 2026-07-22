@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compras - Orlando & Miami 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dark.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="toast-container"></div>
+  <button class="back-to-top" data-back-to-top><i class="fas fa-arrow-up"></i></button>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="logo-icon"><i class="fas fa-map-marked-alt"></i></div><div class="logo-text">Orlando & Miami<span>2026 Trip Planner</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="nav-section"><div class="nav-label">Principal</div>
+          <a href="index.html" class="nav-item"><i class="fas fa-home"></i> Home</a>
+          <a href="cronograma.html" class="nav-item"><i class="fas fa-calendar-alt"></i> Cronograma</a>
+          <a href="parques.html" class="nav-item"><i class="fas fa-roller-coaster"></i> Parques</a>
+          <a href="restaurantes.html" class="nav-item"><i class="fas fa-utensils"></i> Restaurantes</a>
+          <a href="hotel.html" class="nav-item"><i class="fas fa-hotel"></i> Hotel</a>
+        </div>
+        <div class="nav-section"><div class="nav-label">Planejamento</div>
+          <a href="orcamento.html" class="nav-item"><i class="fas fa-wallet"></i> Orçamento</a>
+          <a href="compras.html" class="nav-item active"><i class="fas fa-shopping-bag"></i> Compras</a>
+          <a href="transporte.html" class="nav-item"><i class="fas fa-car"></i> Transporte</a>
+          <a href="grupo.html" class="nav-item"><i class="fas fa-users"></i> Grupo</a>
+        </div>
+        <div class="nav-section"><div class="nav-label">Úteis</div>
+          <a href="documentos.html" class="nav-item"><i class="fas fa-file-alt"></i> Documentos</a>
+          <a href="checklist.html" class="nav-item"><i class="fas fa-check-double"></i> Checklist</a>
+          <a href="mapa.html" class="nav-item"><i class="fas fa-map"></i> Mapa</a>
+          <a href="configuracoes.html" class="nav-item"><i class="fas fa-cog"></i> Configurações</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="user-info"><div class="user-avatar">M</div><div><div style="font-weight:600;font-size:0.85rem;">Michel Aguiar</div><div style="font-size:0.75rem;color:var(--color-text-secondary);">Organizador</div></div></div></div>
+    </aside>
+    <main class="main-content">
+      <header class="navbar-top">
+        <button class="sidebar-toggle" data-sidebar-toggle><i class="fas fa-bars"></i></button>
+        <span class="page-title">Compras</span>
+        <div class="navbar-actions">
+          <button class="btn-icon" data-theme-toggle><i class="fas fa-moon"></i></button>
+          <a href="configuracoes.html" class="btn-icon"><i class="fas fa-cog"></i></a>
+        </div>
+      </header>
+      <div class="page-content">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <div><h1 class="section-title mb-0">Compras</h1><p class="section-subtitle mb-0">Lojas, outlets e lista de compras</p></div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="card" data-aos="fade-up">
+              <div class="card-header"><i class="fas fa-store me-2 text-primary"></i>Lojas e Outlets</div>
+              <div class="card-body">
+                <div class="filter-bar mb-3">
+                  <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="form-control" id="storeSearch" placeholder="Buscar loja..." oninput="filterStores()">
+                  </div>
+                </div>
+                <div id="storesContainer">
+                  <div class="text-center text-muted py-3"><i class="fas fa-spinner fa-spin me-2"></i>Carregando...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-header"><i class="fas fa-list me-2 text-primary"></i>Lista de Compras</div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="newItemName" placeholder="Adicionar item..." onkeypress="if(event.key==='Enter')addShoppingItem()">
+                    <button class="btn btn-primary" onclick="addShoppingItem()"><i class="fas fa-plus"></i></button>
+                  </div>
+                </div>
+                <div id="shoppingListContainer">
+                  <div class="text-center text-muted py-3">Nenhum item na lista.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="app-footer">
+        <div class="footer-content">
+          <div class="footer-copyright"><i class="far fa-copyright me-1"></i> 2026 Orlando & Miami Trip Planner</div>
+          <div class="footer-links"><a href="configuracoes.html">Configurações</a><a href="mapa.html">Mapa</a><a href="grupo.html">Grupo</a></div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    AOS.init({ duration: 600, once: true, easing: 'ease-out-cubic' });
+
+    const stores = [
+      { name: 'Premium Outlet International Drive', hours: '10:00 - 21:00', type: 'Outlet', products: 'Roupas, calçados, bolsas, acessórios', obs: 'Levar mala extra!', map: 'https://maps.google.com/?q=Premium+Outlet+International+Drive+Orlando' },
+      { name: 'Premium Outlet Vineland', hours: '10:00 - 21:00', type: 'Outlet', products: 'Roupas, calçados, bolsas', obs: 'Menor que a International Drive', map: 'https://maps.google.com/?q=Premium+Outlet+Vineland+Orlando' },
+      { name: 'Walmart Supercenter', hours: '06:00 - 23:00', type: 'Supermercado', products: 'Mantimentos, eletrônicos, roupas', obs: 'Compras de suprimentos', map: 'https://maps.google.com/?q=Walmart+Orlando+FL' },
+      { name: 'Target', hours: '08:00 - 22:00', type: 'Departamento', products: 'Mantimentos, roupas, casa, eletrônicos', obs: 'Bom para lanches e suprimentos', map: 'https://maps.google.com/?q=Target+Orlando+FL' },
+      { name: 'Best Buy', hours: '10:00 - 21:00', type: 'Eletrônicos', products: 'Eletrônicos, informática, games', obs: 'Verificar preços de eletrônicos', map: 'https://maps.google.com/?q=Best+Buy+Orlando+FL' },
+      { name: 'Costco', hours: '10:00 - 20:30', type: 'Atacado', products: 'Compras em grande quantidade', obs: 'Gasolina mais barata', map: 'https://maps.google.com/?q=Costco+Orlando+FL' },
+      { name: 'Nike Factory Store', hours: '10:00 - 21:00', type: 'Outlet Esportivo', products: 'Tênis, roupas esportivas', obs: 'Descontos incríveis', map: 'https://maps.google.com/?q=Nike+Factory+Store+Orlando' },
+      { name: 'Adidas Outlet', hours: '10:00 - 21:00', type: 'Outlet Esportivo', products: 'Tênis, roupas esportivas', obs: 'Preços promocionais', map: 'https://maps.google.com/?q=Adidas+Outlet+Orlando' },
+      { name: 'Ross Dress for Less', hours: '09:00 - 22:00', type: 'Departamento', products: 'Roupas, casa, decoração', obs: 'Preços muito baixos', map: 'https://maps.google.com/?q=Ross+Orlando+FL' },
+      { name: 'Marshalls', hours: '09:30 - 21:30', type: 'Departamento', products: 'Roupas, casa, decoração', obs: 'Similiar à Ross', map: 'https://maps.google.com/?q=Marshalls+Orlando+FL' },
+      { name: 'Burlington', hours: '09:00 - 22:00', type: 'Departamento', products: 'Roupas, casa, decoração', obs: 'Boas ofertas em roupas', map: 'https://maps.google.com/?q=Burlington+Orlando+FL' }
+    ];
+
+    function filterStores() {
+      const search = document.getElementById('storeSearch').value.toLowerCase();
+      const container = document.getElementById('storesContainer');
+      const filtered = stores.filter(s => s.name.toLowerCase().includes(search) || s.type.toLowerCase().includes(search) || s.products.toLowerCase().includes(search));
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="text-center text-muted py-4"><i class="fas fa-search me-2"></i>Nenhuma loja encontrada.</div>';
+        return;
+      }
+
+      container.innerHTML = filtered.map(s => `
+        <div class="widget-card searchable mb-2">
+          <div class="widget-icon" style="background:rgba(0,87,217,0.1);color:#0057D9;"><i class="fas fa-store"></i></div>
+          <div class="widget-info">
+            <div class="widget-title">${s.name}</div>
+            <div style="font-size:0.78rem;color:var(--color-text-secondary);">
+              <span class="me-2"><i class="far fa-clock"></i> ${s.hours}</span>
+              <span class="badge badge-primary">${s.type}</span>
+            </div>
+            <div style="font-size:0.78rem;color:var(--color-text-secondary);margin-top:2px;">${s.products}</div>
+            ${s.obs ? `<div style="font-size:0.75rem;color:var(--color-warning);"><i class="fas fa-info-circle"></i> ${s.obs}</div>` : ''}
+          </div>
+          <a href="${s.map}" target="_blank" class="btn btn-sm btn-outline-primary" title="Abrir no Google Maps"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+      `).join('');
+    }
+
+    function loadShoppingList() {
+      const items = Store.get('orlando_shopping', []);
+      const container = document.getElementById('shoppingListContainer');
+      if (items.length === 0) {
+        container.innerHTML = '<div class="text-center text-muted py-3"><i class="fas fa-shopping-bag fa-2x mb-2"></i><p>Nenhum item na lista.</p></div>';
+        return;
+      }
+      container.innerHTML = items.map((item, idx) => `
+        <div class="checklist-item ${item.done ? 'completed' : ''}">
+          <input type="checkbox" class="check-input" ${item.done ? 'checked' : ''} onchange="toggleShoppingItem(${idx})">
+          <div class="check-content">
+            <div class="check-title">${item.name}</div>
+            ${item.notes ? `<div class="check-category">${item.notes}</div>` : ''}
+          </div>
+          <button class="btn btn-sm text-danger" onclick="removeShoppingItem(${idx})"><i class="fas fa-trash"></i></button>
+        </div>
+      `).join('');
+    }
+
+    function addShoppingItem() {
+      const input = document.getElementById('newItemName');
+      const name = input.value.trim();
+      if (!name) return;
+      const items = Store.get('orlando_shopping', []);
+      items.push({ name, notes: '', done: false });
+      Store.set('orlando_shopping', items);
+      input.value = '';
+      loadShoppingList();
+      App.showToast('Item adicionado', name, 'success');
+    }
+
+    function toggleShoppingItem(idx) {
+      const items = Store.get('orlando_shopping', []);
+      items[idx].done = !items[idx].done;
+      Store.set('orlando_shopping', items);
+      loadShoppingList();
+    }
+
+    function removeShoppingItem(idx) {
+      const items = Store.get('orlando_shopping', []);
+      items.splice(idx, 1);
+      Store.set('orlando_shopping', items);
+      loadShoppingList();
+      App.showToast('Item removido', '', 'info');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => { filterStores(); loadShoppingList(); });
+  </script>
+</body>
+</html>

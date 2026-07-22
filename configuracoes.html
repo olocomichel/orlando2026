@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações - Orlando & Miami 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dark.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="toast-container"></div>
+  <button class="back-to-top" data-back-to-top><i class="fas fa-arrow-up"></i></button>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="logo-icon"><i class="fas fa-map-marked-alt"></i></div><div class="logo-text">Orlando & Miami<span>2026 Trip Planner</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="nav-section"><div class="nav-label">Principal</div>
+          <a href="index.html" class="nav-item"><i class="fas fa-home"></i> Home</a>
+          <a href="cronograma.html" class="nav-item"><i class="fas fa-calendar-alt"></i> Cronograma</a>
+          <a href="parques.html" class="nav-item"><i class="fas fa-roller-coaster"></i> Parques</a>
+          <a href="restaurantes.html" class="nav-item"><i class="fas fa-utensils"></i> Restaurantes</a>
+          <a href="hotel.html" class="nav-item"><i class="fas fa-hotel"></i> Hotel</a>
+        </div>
+        <div class="nav-section"><div class="nav-label">Planejamento</div>
+          <a href="orcamento.html" class="nav-item"><i class="fas fa-wallet"></i> Orçamento</a>
+          <a href="compras.html" class="nav-item"><i class="fas fa-shopping-bag"></i> Compras</a>
+          <a href="transporte.html" class="nav-item"><i class="fas fa-car"></i> Transporte</a>
+          <a href="grupo.html" class="nav-item"><i class="fas fa-users"></i> Grupo</a>
+        </div>
+        <div class="nav-section"><div class="nav-label">Úteis</div>
+          <a href="documentos.html" class="nav-item"><i class="fas fa-file-alt"></i> Documentos</a>
+          <a href="checklist.html" class="nav-item"><i class="fas fa-check-double"></i> Checklist</a>
+          <a href="mapa.html" class="nav-item"><i class="fas fa-map"></i> Mapa</a>
+          <a href="configuracoes.html" class="nav-item active"><i class="fas fa-cog"></i> Configurações</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="user-info"><div class="user-avatar">M</div><div><div style="font-weight:600;font-size:0.85rem;">Michel Aguiar</div><div style="font-size:0.75rem;color:var(--color-text-secondary);">Organizador</div></div></div></div>
+    </aside>
+    <main class="main-content">
+      <header class="navbar-top">
+        <button class="sidebar-toggle" data-sidebar-toggle><i class="fas fa-bars"></i></button>
+        <span class="page-title">Configurações</span>
+        <div class="navbar-actions">
+          <button class="btn-icon" data-theme-toggle><i class="fas fa-moon"></i></button>
+          <a href="configuracoes.html" class="btn-icon"><i class="fas fa-cog"></i></a>
+        </div>
+      </header>
+      <div class="page-content">
+        <h1 class="section-title mb-0">Configurações</h1>
+        <p class="section-subtitle">Personalize sua experiência</p>
+
+        <div class="row g-4">
+          <!-- Theme -->
+          <div class="col-lg-6">
+            <div class="card" data-aos="fade-up">
+              <div class="card-header"><i class="fas fa-palette me-2 text-primary"></i>Aparência</div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label class="form-label">Tema</label>
+                  <div class="d-flex gap-3">
+                    <div class="text-center" onclick="setTheme('light')" style="cursor:pointer;">
+                      <div style="width:80px;height:80px;border-radius:var(--radius-md);background:white;border:2px solid var(--color-border);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#222;margin-bottom:4px;" id="themeLightBtn">
+                        <i class="fas fa-sun"></i>
+                      </div>
+                      <span style="font-size:0.8rem;">Claro</span>
+                    </div>
+                    <div class="text-center" onclick="setTheme('dark')" style="cursor:pointer;">
+                      <div style="width:80px;height:80px;border-radius:var(--radius-md);background:#1A1D27;border:2px solid var(--color-border);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#E8ECF1;margin-bottom:4px;" id="themeDarkBtn">
+                        <i class="fas fa-moon"></i>
+                      </div>
+                      <span style="font-size:0.8rem;">Escuro</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-0">
+                  <label class="form-label">Idioma</label>
+                  <select class="form-select" id="langSelect" onchange="changeLanguage(this.value)">
+                    <option value="pt-BR">Português (Brasil)</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Data Management -->
+            <div class="card mt-3" data-aos="fade-up">
+              <div class="card-header"><i class="fas fa-database me-2 text-primary"></i>Gerenciar Dados</div>
+              <div class="card-body">
+                <p style="font-size:0.85rem;color:var(--color-text-secondary);">Seus dados estão salvos localmente no navegador.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <button class="btn btn-outline-primary" onclick="exportData()">
+                    <i class="fas fa-download me-1"></i> Exportar Dados
+                  </button>
+                  <button class="btn btn-outline-success" onclick="document.getElementById('importFile').click()">
+                    <i class="fas fa-upload me-1"></i> Importar Dados
+                  </button>
+                  <input type="file" id="importFile" accept=".json" style="display:none;" onchange="importData(event)">
+                  <button class="btn btn-outline-danger" onclick="resetAllData()">
+                    <i class="fas fa-trash me-1"></i> Resetar Tudo
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About / Info -->
+          <div class="col-lg-6">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-header"><i class="fas fa-info-circle me-2 text-primary"></i>Sobre</div>
+              <div class="card-body">
+                <div class="text-center mb-3">
+                  <div style="width:72px;height:72px;border-radius:var(--radius-lg);background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;color:white;font-size:2rem;margin:0 auto 12px;">
+                    <i class="fas fa-map-marked-alt"></i>
+                  </div>
+                  <h5 style="font-weight:700;">Orlando & Miami Trip Planner</h5>
+                  <p style="font-size:0.85rem;color:var(--color-text-secondary);">Versão 1.0.0</p>
+                </div>
+                <div class="info-row"><div class="info-label">Viagem</div><div class="info-value">01 a 13 de Novembro de 2026</div></div>
+                <div class="info-row"><div class="info-label">Cidades</div><div class="info-value">Orlando e Miami, FL</div></div>
+                <div class="info-row"><div class="info-label">Participantes</div><div class="info-value" id="infoParticipants">0</div></div>
+                <div class="info-row"><div class="info-label">Dias</div><div class="info-value">13 dias</div></div>
+                <div class="info-row"><div class="info-label">Parques</div><div class="info-value">9 parques</div></div>
+                <hr>
+                <div class="d-flex gap-2 justify-content-center">
+                  <a href="https://github.com/olocomichel/orlando2026" target="_blank" class="btn btn-outline-secondary btn-sm">
+                    <i class="fab fa-github me-1"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Storage Stats -->
+            <div class="card mt-3" data-aos="fade-up" data-aos-delay="150">
+              <div class="card-header"><i class="fas fa-chart-bar me-2 text-primary"></i>Armazenamento</div>
+              <div class="card-body">
+                <div id="storageStats">
+                  <div class="text-center text-muted py-2"><i class="fas fa-spinner fa-spin me-2"></i>Carregando...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="app-footer">
+        <div class="footer-content">
+          <div class="footer-copyright"><i class="far fa-copyright me-1"></i> 2026 Orlando & Miami Trip Planner</div>
+          <div class="footer-links"><a href="configuracoes.html">Configurações</a><a href="mapa.html">Mapa</a><a href="grupo.html">Grupo</a></div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    AOS.init({ duration: 600, once: true, easing: 'ease-out-cubic' });
+
+    function setTheme(theme) {
+      Theme.apply(theme);
+      Theme.updateIcon(theme);
+      updateThemeButtons(theme);
+      App.showToast('Tema alterado', theme === 'dark' ? 'Modo escuro ativado' : 'Modo claro ativado', 'info');
+    }
+
+    function updateThemeButtons(theme) {
+      const lightBtn = document.getElementById('themeLightBtn');
+      const darkBtn = document.getElementById('themeDarkBtn');
+      if (lightBtn) lightBtn.style.borderColor = theme === 'light' ? 'var(--color-primary)' : 'var(--color-border)';
+      if (darkBtn) darkBtn.style.borderColor = theme === 'dark' ? 'var(--color-primary)' : 'var(--color-border)';
+    }
+
+    function changeLanguage(lang) {
+      Storage.set('orlando_language', lang);
+      App.showToast('Idioma alterado', lang === 'pt-BR' ? 'Português' : lang === 'en' ? 'English' : 'Español', 'success');
+    }
+
+    function exportData() {
+      const keys = Storage.keys();
+      const data = {};
+      keys.forEach(key => {
+        data[key] = Storage.get(key);
+      });
+
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'orlando2026_backup_' + new Date().toISOString().split('T')[0] + '.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      App.showToast('Dados exportados', 'Arquivo baixado com sucesso!', 'success');
+    }
+
+    function importData(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          Object.keys(data).forEach(key => {
+            if (key.startsWith('orlando_')) {
+              Storage.set(key, data[key]);
+            }
+          });
+          App.showToast('Dados importados', 'Todos os dados foram restaurados!', 'success');
+          setTimeout(() => window.location.reload(), 1500);
+        } catch (err) {
+          App.showToast('Erro', 'Arquivo inválido', 'error');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function resetAllData() {
+      if (!confirm('Tem certeza? Todos os dados salvos serão perdidos!')) return;
+      if (!confirm('Esta ação não pode ser desfeita. Confirmar exclusão?')) return;
+      Storage.clear();
+      App.showToast('Dados resetados', 'Todos os dados foram limpos.', 'info');
+      setTimeout(() => window.location.reload(), 1500);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Update theme buttons
+      const currentTheme = Theme.getCurrent();
+      updateThemeButtons(currentTheme);
+
+      // Participants count
+      const group = Store.get('orlando_group', DefaultData.group);
+      document.getElementById('infoParticipants').textContent = group.length;
+
+      // Storage stats
+      const stats = Storage.stats();
+      const usedMB = (stats.used / (1024 * 1024)).toFixed(2);
+      const totalMB = (stats.total / (1024 * 1024)).toFixed(2);
+      document.getElementById('storageStats').innerHTML = `
+        <div class="d-flex justify-content-between mb-2">
+          <span style="font-size:0.85rem;">Espaço utilizado</span>
+          <span style="font-weight:600;font-size:0.85rem;">${usedMB} MB / ${totalMB} MB</span>
+        </div>
+        <div class="progress" style="height:8px;">
+          <div class="progress-bar" style="width:${Math.min(stats.percent, 100)}%;"></div>
+        </div>
+        <div class="text-end mt-1" style="font-size:0.75rem;color:var(--color-text-secondary);">${stats.percent.toFixed(1)}% utilizado</div>
+      `;
+    });
+  </script>
+</body>
+</html>

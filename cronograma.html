@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronograma - Orlando & Miami 2026</title>
+  <meta name="description" content="Cronograma completo dos 13 dias de viagem para Orlando e Miami">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dark.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="toast-container"></div>
+  <button class="back-to-top" data-back-to-top aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-icon"><i class="fas fa-map-marked-alt"></i></div>
+        <div class="logo-text">Orlando & Miami<span>2026 Trip Planner</span></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section"><div class="nav-label">Principal</div>
+          <a href="index.html" class="nav-item"><i class="fas fa-home"></i> Home</a>
+          <a href="cronograma.html" class="nav-item active"><i class="fas fa-calendar-alt"></i> Cronograma</a>
+          <a href="parques.html" class="nav-item"><i class="fas fa-roller-coaster"></i> Parques</a>
+          <a href="restaurantes.html" class="nav-item"><i class="fas fa-utensils"></i> Restaurantes</a>
+          <a href="hotel.html" class="nav-item"><i class="fas fa-hotel"></i> Hotel</a>
+        </div>
+        <div class="nav-section"><div class="nav-label">Planejamento</div>
+          <a href="orcamento.html" class="nav-item"><i class="fas fa-wallet"></i> Orçamento</a>
+          <a href="compras.html" class="nav-item"><i class="fas fa-shopping-bag"></i> Compras</a>
+          <a href="transporte.html" class="nav-item"><i class="fas fa-car"></i> Transporte</a>
+          <a href="grupo.html" class="nav-item"><i class="fas fa-users"></i> Grupo</a>
+        </div>
+        <div class="nav-section"><div class="nav-label">Úteis</div>
+          <a href="documentos.html" class="nav-item"><i class="fas fa-file-alt"></i> Documentos</a>
+          <a href="checklist.html" class="nav-item"><i class="fas fa-check-double"></i> Checklist</a>
+          <a href="mapa.html" class="nav-item"><i class="fas fa-map"></i> Mapa</a>
+          <a href="configuracoes.html" class="nav-item"><i class="fas fa-cog"></i> Configurações</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar">M</div>
+          <div><div style="font-weight:600;font-size:0.85rem;">Michel Aguiar</div><div style="font-size:0.75rem;color:var(--color-text-secondary);">Organizador</div></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="navbar-top">
+        <button class="sidebar-toggle" data-sidebar-toggle aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+        <span class="page-title">Cronograma</span>
+        <div class="navbar-actions">
+          <button class="btn-icon" data-theme-toggle aria-label="Alternar tema"><i class="fas fa-moon"></i></button>
+          <a href="configuracoes.html" class="btn-icon"><i class="fas fa-cog"></i></a>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+          <div>
+            <h1 class="section-title mb-0">Cronograma da Viagem</h1>
+            <p class="section-subtitle mb-0">13 dias de aventura em Orlando e Miami</p>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm" onclick="window.location.href='mapa.html'">
+              <i class="fas fa-map me-1"></i> Ver Mapa
+            </button>
+          </div>
+        </div>
+
+        <!-- Progress Overview -->
+        <div class="stats-grid mb-4" data-aos="fade-up">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(0,87,217,0.1);color:#0057D9;"><i class="fas fa-calendar-check"></i></div>
+            <div class="stat-info">
+              <div class="stat-value" id="completedDays">0</div>
+              <div class="stat-label">Dias Completos</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(46,204,113,0.1);color:#2ECC71;"><i class="fas fa-spinner"></i></div>
+            <div class="stat-info">
+              <div class="stat-value" id="pendingDays">13</div>
+              <div class="stat-label">Dias Restantes</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(255,152,0,0.1);color:#FF9800;"><i class="fas fa-star"></i></div>
+            <div class="stat-info">
+              <div class="stat-value">9</div>
+              <div class="stat-label">Parques</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(155,89,182,0.1);color:#9B59B6;"><i class="fas fa-city"></i></div>
+            <div class="stat-info">
+              <div class="stat-value">2</div>
+              <div class="stat-label">Cidades</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="card" data-aos="fade-up">
+          <div class="card-header d-flex align-items-center justify-content-between">
+            <span><i class="fas fa-timeline me-2 text-primary"></i>Linha do Tempo</span>
+            <div>
+              <select class="form-select form-select-sm" style="width:auto;display:inline-block;" id="dayFilter" onchange="filterDays()">
+                <option value="all">Todos os dias</option>
+                <option value="orlando">Orlando</option>
+                <option value="miami">Miami</option>
+              </select>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="timeline" id="timelineContainer">
+              <div class="text-center text-muted py-4"><i class="fas fa-spinner fa-spin me-2"></i>Carregando cronograma...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="app-footer">
+        <div class="footer-content">
+          <div class="footer-copyright"><i class="far fa-copyright me-1"></i> 2026 Orlando & Miami Trip Planner</div>
+          <div class="footer-links">
+            <a href="configuracoes.html">Configurações</a>
+            <a href="mapa.html">Mapa</a>
+            <a href="grupo.html">Grupo</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    AOS.init({ duration: 600, once: true, easing: 'ease-out-cubic' });
+
+    function renderTimeline(filter = 'all') {
+      const schedule = Store.get('orlando_schedule', DefaultData.schedule);
+      const container = document.getElementById('timelineContainer');
+
+      let filtered = schedule;
+      if (filter !== 'all') {
+        filtered = schedule.filter(d => d.city.toLowerCase() === filter);
+      }
+
+      const completed = schedule.filter(d => d.status === 'completed').length;
+      document.getElementById('completedDays').textContent = completed;
+      document.getElementById('pendingDays').textContent = schedule.length - completed;
+
+      const parkColors = {
+        'Magic Kingdom': '#0057D9',
+        'EPCOT': '#2E8BFF',
+        'Hollywood Studios': '#9B59B6',
+        'Animal Kingdom': '#2ECC71',
+        'Universal Studios': '#E74C3C',
+        'Islands of Adventure': '#FF9800',
+        'SeaWorld': '#1ABC9C',
+        'Aquatica': '#3498DB',
+        'Disney Springs': '#F39C12'
+      };
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="text-center text-muted py-4">Nenhum dia encontrado para este filtro.</div>';
+        return;
+      }
+
+      container.innerHTML = filtered.map(d => {
+        const color = parkColors[d.park] || '#0057D9';
+        const isCompleted = d.status === 'completed';
+        const dateFormatted = d.date ? new Date(d.date + 'T12:00:00').toLocaleDateString('pt-BR', { day: '2-digit', month: 'long' }) : '';
+
+        return `
+          <div class="timeline-item ${isCompleted ? 'completed' : ''}" data-day="${d.day}" data-city="${d.city.toLowerCase()}">
+            <div class="timeline-date">
+              <i class="far fa-calendar me-1"></i>${d.weekday}, ${dateFormatted}
+            </div>
+            <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+              <span class="badge" style="background:${color}20;color:${color};">
+                <i class="fas fa-sun"></i> Dia ${d.day}
+              </span>
+              <span class="badge" style="background:rgba(0,0,0,0.05);color:var(--color-text-secondary);">
+                <i class="fas fa-map-marker-alt"></i> ${d.city}
+              </span>
+              <span class="status-dot ${isCompleted ? 'confirmed' : 'pending'}"></span>
+              <span style="font-size:0.8rem;color:var(--color-text-secondary);">${isCompleted ? 'Completo' : 'Pendente'}</span>
+            </div>
+            <div class="timeline-title">
+              ${d.park !== '-' ? d.park : 'Dia Livre / Viagem'}
+            </div>
+            <div class="timeline-content mt-1">
+              ${d.checkIn !== '-' ? `<span class="me-3"><i class="far fa-clock me-1"></i>${d.checkIn} às ${d.checkOut}</span>` : ''}
+              ${d.restaurant !== '-' ? `<span class="me-3"><i class="fas fa-utensils me-1"></i>${d.restaurant}</span>` : ''}
+              ${d.show !== '-' ? `<span class="me-3"><i class="fas fa-music me-1"></i>${d.show}</span>` : ''}
+              ${d.fireworks ? `<span class="text-warning"><i class="fas fa-star me-1"></i>Fogos</span>` : ''}
+            </div>
+            ${d.obs ? `<div class="mt-2" style="font-size:0.8rem;color:var(--color-text-secondary);background:var(--color-bg);padding:8px 12px;border-radius:8px;"><i class="fas fa-info-circle me-1"></i>${d.obs}</div>` : ''}
+            <div class="mt-2">
+              <button class="btn btn-sm ${isCompleted ? 'btn-outline-secondary' : 'btn-outline-success'}" onclick="toggleDayStatus(${d.day})">
+                <i class="fas ${isCompleted ? 'fa-undo' : 'fa-check'} me-1"></i>${isCompleted ? 'Reabrir' : 'Marcar Completo'}
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleDayStatus(day) {
+      const schedule = Store.get('orlando_schedule', DefaultData.schedule);
+      const idx = schedule.findIndex(d => d.day === day);
+      if (idx !== -1) {
+        schedule[idx].status = schedule[idx].status === 'completed' ? 'pending' : 'completed';
+        Store.set('orlando_schedule', schedule);
+        renderTimeline(document.getElementById('dayFilter').value);
+        App.showToast('Dia ' + day, schedule[idx].status === 'completed' ? 'Marcado como completo!' : 'Reaberto!', schedule[idx].status === 'completed' ? 'success' : 'info');
+      }
+    }
+
+    function filterDays() {
+      renderTimeline(document.getElementById('dayFilter').value);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => renderTimeline());
+  </script>
+</body>
+</html>
